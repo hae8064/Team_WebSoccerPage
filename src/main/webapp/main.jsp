@@ -49,7 +49,7 @@ function cartView() {
 	<table>
 		<tr>
 			<td align="right">
-				<a href="#">메인페이지</a>&nbsp;&nbsp;&nbsp;
+				<a href="#">자유게시판</a>&nbsp;&nbsp;&nbsp;
 				<a href="#">나이키</a>&nbsp;&nbsp;&nbsp;
 				<a href="#">아디다스</a>&nbsp;&nbsp;&nbsp;
 				<a href="#">퓨마</a>
