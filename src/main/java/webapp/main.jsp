@@ -16,7 +16,7 @@
 function Cart(name, price) {
 	//alert("Name : " + name + "\nPrice : " + price);
 	if(confirm("관심상품에 담으시겠습니까?")) {
-		location.href = "cartView.jsp?name=" + name + "&price=" + price;
+		location.href = "cartProcess.jsp?name=" + name + "&price=" + price;
 	}
 }
 
@@ -110,8 +110,7 @@ function cartView() {
 					
 					out.println("<tr align='center'>");
 						out.println("<td>");
-							out.println("<input type='button' value='관심상품 담기' ");
-							out.println("onclick='Cart(\"" + name[i] + "\", \"" + price[i] + "\")' />");
+							out.println("<input type='button' value='관심상품 담기' onClick = 'Cart(\"" + name[i] + "\", \"" + price[i] + "\")'/>");
 						out.println("</td>");
 					out.println("</tr>");
 				out.println("</table>");
