@@ -15,14 +15,14 @@
 <script type="text/javascript">
 function Cart(name, price) {
 	//alert("Name : " + name + "\nPrice : " + price);
-	if(confirm("장바구니에 담으시겠습니까?")) {
-		location.href = "CartProcess.jsp?name=" + name + "&price=" + price;
+	if(confirm("관심상품에 담으시겠습니까?")) {
+		location.href = "cartView.jsp?name=" + name + "&price=" + price;
 	}
 }
 
 function cartView() {
-	if(confirm("장바구니를 보시겠습니까?")){
-		location.href = "CartView.jsp";
+	if(confirm("관심상품을 보시겠습니까?")){
+		location.href = "cartView.jsp";
 	}
 }
 
@@ -49,10 +49,10 @@ function cartView() {
 	<table>
 		<tr>
 			<td align="right">
-				<a href="#">자유게시판</a>&nbsp;&nbsp;&nbsp;
-				<a href="#">나이키</a>&nbsp;&nbsp;&nbsp;
-				<a href="#">아디다스</a>&nbsp;&nbsp;&nbsp;
-				<a href="#">퓨마</a>
+				<a href="board.jsp" target = "_self">자유게시판</a>&nbsp;&nbsp;&nbsp;
+				<a href="#" target = "_self">나이키</a>&nbsp;&nbsp;&nbsp;
+				<a href="#" target = "_self">아디다스</a>&nbsp;&nbsp;&nbsp;
+				<a href="#" target = "_self">퓨마</a>
 			</td>
 		</tr>
 	</table>
@@ -64,9 +64,9 @@ function cartView() {
 		<input type="submit" value="로그아웃">
 	</form>
 	
-	<!-- 장바구니 보기 버튼 -->
+	<!-- 관심상품 보기 버튼 -->
 	<div id = "cartButton">
-		<input type="button" value="장바구니 보기" onclick="cartView()" />	
+		<input type="button" value="관심상품 보기" onclick="cartView()" />	
 	</div>
 	
 	
@@ -110,8 +110,8 @@ function cartView() {
 					
 					out.println("<tr align='center'>");
 						out.println("<td>");
-							out.println("<input type='button' value='장바구니 담기' ");
-							out.println("onclick='fnCart(\"" + name[i] + "\", \"" + price[i] + "\")' />");
+							out.println("<input type='button' value='관심상품 담기' ");
+							out.println("onclick='Cart(\"" + name[i] + "\", \"" + price[i] + "\")' />");
 						out.println("</td>");
 					out.println("</tr>");
 				out.println("</table>");
