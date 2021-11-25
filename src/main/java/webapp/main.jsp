@@ -14,18 +14,20 @@
 <!-- 자바스크립트 구현 -->
 <script type="text/javascript">
 
+//관심상품 담는 process 함수
+function Cart(name, price) {
+	if(confirm("관심상품에 담으시겠습니까?")) {
+		location.href = "cartProcess.jsp?name=" + name + "&price=" + price;
+	}
+}
+
 	//관심상품 보는 함수
 	function cartView() {
 		if(confirm("관심상품을 보시겠습니까?")){
 			location.href = "cartView.jsp";
 		}
 
-	//관심상품 담는 process 함수
-	function Cart(name, price) {
-		if(confirm("관심상품에 담으시겠습니까?")) {
-			location.href = "cartProcess.jsp?name=" + name + "&price=" + price;
-		}
-	}
+	
 }
 </script>
 
@@ -44,6 +46,7 @@
 </style>
 </head>
 <body>
+
 
 <!-- 최상단 메뉴바 -->
 <div align="center">
@@ -94,7 +97,7 @@
 				
 					out.println("<tr align='center'>");
 						out.println("<td>");
-							out.println("<img src = 'images/" + img[i] + "' width='150' height='150' />");
+							out.println("<a href='mainProdDetail.jsp' target = '_self'><img src = 'images/" + img[i] + "' width='150' height='150' /></a>");
 						out.println("</td>");
 					out.println("</tr>");
 					
@@ -110,6 +113,7 @@
 						out.println("</td>");
 					out.println("</tr>");
 					
+		
 					out.println("<tr align='center'>");
 						out.println("<td>");
 							out.println("<input type='button' value='관심상품 담기' onClick = 'Cart(\"" + name[i] + "\", \"" + price[i] + "\")'/>");
@@ -117,7 +121,6 @@
 					out.println("</tr>");
 					
 				out.println("</table>");
-				
 			out.println("</td>");
 			
 			if(i % 5 == 4) {
@@ -129,7 +132,7 @@
 	<br>
 	<br>
 	<!-- footer추가 -->
-	<footer>
+	<footer class = "footer">
 		관리팀: 5팀
 		<br>
 		문의: KpuWebTeam5@kpu.ac.kr
